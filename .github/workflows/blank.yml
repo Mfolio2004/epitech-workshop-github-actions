@@ -80,4 +80,3 @@ jobs:
       - name: start nginx service and retrieve response code line
         run: |
           curl -s -o /dev/null -w "%{http_code}" http://localhost:4242
-          echo "response code: $?"
