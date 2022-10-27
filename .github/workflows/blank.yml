@@ -78,4 +78,4 @@ jobs:
           - 4242:80
     steps:
       - name: Version of nginx
-        run: curl http://localhost:4242
+        run: curl http://localhost:4242 | grep "HTTP/1.1 200 OK"
