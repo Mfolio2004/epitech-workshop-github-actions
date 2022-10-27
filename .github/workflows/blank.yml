@@ -79,3 +79,17 @@ jobs:
     steps:
       - name: start nginx service and retrieve response code line
         run: curl -s -o /dev/null -w "%{http_code}" http://localhost:4242
+  
+  nginxVar:
+    runs-on: ubuntu-latest
+    services: 
+      nginx:
+        image: mrsquaare/nginx-htpasswd
+        ports:
+          - 4242:80
+        env:
+          NGINX_USER: ${{ secrets.NGINX_USER }}
+          NGINX_PASS: ${{ secrets.NGINX_PASS }}
+    steps:
+      - name: login ngnix and retrieve response code line
+        run: curl -s -o /dev/null -w "%{http_code}" http://localhost:4242 -u ${{ secrets.NGINX_USER }}:${{ secrets.NGINX_PASS }}
