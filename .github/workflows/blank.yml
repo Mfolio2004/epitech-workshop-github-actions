@@ -78,5 +78,4 @@ jobs:
           - 4242:80
     steps:
       - name: start nginx service and retrieve response code line
-        run: |
-          curl -s -o /dev/null -w "%{http_code}" http://localhost:4242
+        run: curl -s -o /dev/null -w "%{http_code}" http://localhost:4242
