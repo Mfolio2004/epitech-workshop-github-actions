@@ -73,5 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     container: nginx
     steps:
+      - name: start nginx
+        run: nginx -g 'daemon off;'
       - name: service nginx status
         run: service nginx status
