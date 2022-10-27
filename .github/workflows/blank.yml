@@ -36,4 +36,5 @@ jobs:
       - name: Hello world
         run: echo Hello, world!
       - name: Hello Wolrd + date + heure
-        run: echo Hello, world! Today is $(date + %m-%d-%Y + %H:%M:%S)
+        run: echo Hello, world! Today is $(date + '%m-%d-%Y' + '%H:%M:%S')
+
