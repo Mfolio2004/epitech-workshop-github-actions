@@ -48,4 +48,4 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Version
-        run: GetComputerInfo *version*
+        run: Get-ComputerInfo -Property "*version"
