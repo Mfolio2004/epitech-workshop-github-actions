@@ -4,11 +4,10 @@ name: CI
 
 # Controls when the workflow will run
 on:
+  gollum:
+    types: [created, edited, deleted]
   issues:
-    types:
-      - opened
-      - edited
-      - closed
+    types: [created, edited, deleted]
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '1 1 1 * *'
