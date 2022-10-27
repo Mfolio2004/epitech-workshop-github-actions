@@ -98,11 +98,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: sort branches
-        run: |
-          git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
-          git fetch --all
-          git branch -vv | sort -k2 -r
-      - name: print sorted branches
-        run: |
-          git branch -vv | sort -k2 -r
+      - name: sort branches and display them
+        run: git branch -r | sort -V | xargs -n 1 echo
