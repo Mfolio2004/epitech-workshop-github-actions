@@ -98,5 +98,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: sort branches and display them
-        run: git branch -r | sort -V | xargs -n 1 echo
+      - name: display sorted list of files
+        run: ls -l | sort -k 5 -n
