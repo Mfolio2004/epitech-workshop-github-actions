@@ -49,3 +49,10 @@ jobs:
     steps:
       - name: Version
         run: Get-ComputerInfo -Property "*version"
+  
+  alpine:
+    runs-on: ubuntu-latest
+    container: alpine
+    steps:
+      - name: Version of alpine
+        run: cat /etc/alpine-release
