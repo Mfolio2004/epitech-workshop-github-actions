@@ -56,3 +56,15 @@ jobs:
     steps:
       - name: Version of alpine
         run: cat /etc/alpine-release
+  centos:
+    runs-on: ubuntu-latest
+    container: centos
+    steps:
+      - name: Version of centos
+        run: cat /etc/centos-release
+  fedora:
+    runs-on: ubuntu-latest
+    container: fedora
+    steps:
+      - name: Version of fedora
+        run: cat /etc/fedora-release
