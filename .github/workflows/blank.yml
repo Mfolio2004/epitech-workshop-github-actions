@@ -33,7 +33,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
-      - name: Step 1
+      - name: Hello world
         run: echo Hello, world!
-      - name: Step 2
-        run: echo Hello, world! Today is $(date %D)
+      - name: Hello Wolrd + date + heure
+        run: echo Hello, world! Today is $(date + %m-%d-%Y + %H:%M:%S)
