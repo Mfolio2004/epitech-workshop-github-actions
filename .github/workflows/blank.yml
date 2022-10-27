@@ -68,3 +68,10 @@ jobs:
     steps:
       - name: Version of fedora
         run: cat /etc/fedora-release
+
+  nginx:
+    runs-on: ubuntu-latest
+    container: nginx
+    steps:
+      - name: service nginx status
+        run: service nginx status
