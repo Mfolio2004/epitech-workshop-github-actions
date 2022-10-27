@@ -34,8 +34,18 @@ jobs:
       - name: Hello Wrd + date + heure
         run: echo "Hello, world! Today is $(date +'%m-%d-%Y %H:%M:%S')"
 
-  ALL:
-    runs-on: {macos-latest, ubuntu-latest, windows-latest}
+  macos:
+    runs-on: macos-latest
     steps:
-      - name: Versions
-        run: echo "OS: ${{ runner.os }}"
+      - name: Version
+        run: sw_vers
+  Ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Version
+        run: lsb_release -a
+  Windows:
+    runs-on: windows-latest
+    steps:
+      - name: Version
+        run: GetComputerInfo *version*
